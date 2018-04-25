@@ -1,0 +1,6 @@
+framework module Pods_gradekeep {
+  umbrella header "Pods-gradekeep-umbrella.h"
+
+  export *
+  module * { export * }
+}
