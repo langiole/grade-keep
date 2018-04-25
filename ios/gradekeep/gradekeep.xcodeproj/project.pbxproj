@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FBF05BFD20910C820004398E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF05BFC20910C820004398E /* AppDelegate.swift */; };
+		FBF05BFF20910C820004398E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF05BFE20910C820004398E /* ViewController.swift */; };
+		FBF05C0220910C820004398E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF05C0020910C820004398E /* Main.storyboard */; };
+		FBF05C0420910C820004398E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF05C0320910C820004398E /* Assets.xcassets */; };
+		FBF05C0720910C820004398E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF05C0520910C820004398E /* LaunchScreen.storyboard */; };
+		FBF05C1220910C820004398E /* gradekeepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF05C1120910C820004398E /* gradekeepTests.swift */; };
+		FBF05C1D20910C820004398E /* gradekeepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF05C1C20910C820004398E /* gradekeepUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FBF05C0E20910C820004398E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBF05BF120910C810004398E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBF05BF820910C810004398E;
+			remoteInfo = gradekeep;
+		};
+		FBF05C1920910C820004398E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBF05BF120910C810004398E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBF05BF820910C810004398E;
+			remoteInfo = gradekeep;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FBF05BF920910C820004398E /* gradekeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gradekeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBF05BFC20910C820004398E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FBF05BFE20910C820004398E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FBF05C0120910C820004398E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FBF05C0320910C820004398E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FBF05C0620910C820004398E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FBF05C0820910C820004398E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBF05C0D20910C820004398E /* gradekeepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gradekeepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBF05C1120910C820004398E /* gradekeepTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradekeepTests.swift; sourceTree = "<group>"; };
+		FBF05C1320910C820004398E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBF05C1820910C820004398E /* gradekeepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gradekeepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBF05C1C20910C820004398E /* gradekeepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradekeepUITests.swift; sourceTree = "<group>"; };
+		FBF05C1E20910C820004398E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBF05BF620910C810004398E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBF05C0A20910C820004398E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBF05C1520910C820004398E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FBF05BF020910C810004398E = {
+			isa = PBXGroup;
+			children = (
+				FBF05BFB20910C820004398E /* gradekeep */,
+				FBF05C1020910C820004398E /* gradekeepTests */,
+				FBF05C1B20910C820004398E /* gradekeepUITests */,
+				FBF05BFA20910C820004398E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FBF05BFA20910C820004398E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBF05BF920910C820004398E /* gradekeep.app */,
+				FBF05C0D20910C820004398E /* gradekeepTests.xctest */,
+				FBF05C1820910C820004398E /* gradekeepUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBF05BFB20910C820004398E /* gradekeep */ = {
+			isa = PBXGroup;
+			children = (
+				FBF05BFC20910C820004398E /* AppDelegate.swift */,
+				FBF05BFE20910C820004398E /* ViewController.swift */,
+				FBF05C0020910C820004398E /* Main.storyboard */,
+				FBF05C0320910C820004398E /* Assets.xcassets */,
+				FBF05C0520910C820004398E /* LaunchScreen.storyboard */,
+				FBF05C0820910C820004398E /* Info.plist */,
+			);
+			path = gradekeep;
+			sourceTree = "<group>";
+		};
+		FBF05C1020910C820004398E /* gradekeepTests */ = {
+			isa = PBXGroup;
+			children = (
+				FBF05C1120910C820004398E /* gradekeepTests.swift */,
+				FBF05C1320910C820004398E /* Info.plist */,
+			);
+			path = gradekeepTests;
+			sourceTree = "<group>";
+		};
+		FBF05C1B20910C820004398E /* gradekeepUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FBF05C1C20910C820004398E /* gradekeepUITests.swift */,
+				FBF05C1E20910C820004398E /* Info.plist */,
+			);
+			path = gradekeepUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBF05BF820910C810004398E /* gradekeep */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBF05C2120910C820004398E /* Build configuration list for PBXNativeTarget "gradekeep" */;
+			buildPhases = (
+				FBF05BF520910C810004398E /* Sources */,
+				FBF05BF620910C810004398E /* Frameworks */,
+				FBF05BF720910C810004398E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gradekeep;
+			productName = gradekeep;
+			productReference = FBF05BF920910C820004398E /* gradekeep.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FBF05C0C20910C820004398E /* gradekeepTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBF05C2420910C820004398E /* Build configuration list for PBXNativeTarget "gradekeepTests" */;
+			buildPhases = (
+				FBF05C0920910C820004398E /* Sources */,
+				FBF05C0A20910C820004398E /* Frameworks */,
+				FBF05C0B20910C820004398E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBF05C0F20910C820004398E /* PBXTargetDependency */,
+			);
+			name = gradekeepTests;
+			productName = gradekeepTests;
+			productReference = FBF05C0D20910C820004398E /* gradekeepTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FBF05C1720910C820004398E /* gradekeepUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBF05C2720910C820004398E /* Build configuration list for PBXNativeTarget "gradekeepUITests" */;
+			buildPhases = (
+				FBF05C1420910C820004398E /* Sources */,
+				FBF05C1520910C820004398E /* Frameworks */,
+				FBF05C1620910C820004398E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBF05C1A20910C820004398E /* PBXTargetDependency */,
+			);
+			name = gradekeepUITests;
+			productName = gradekeepUITests;
+			productReference = FBF05C1820910C820004398E /* gradekeepUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBF05BF120910C810004398E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Lee Angioletti";
+				TargetAttributes = {
+					FBF05BF820910C810004398E = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					FBF05C0C20910C820004398E = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = FBF05BF820910C810004398E;
+					};
+					FBF05C1720910C820004398E = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = FBF05BF820910C810004398E;
+					};
+				};
+			};
+			buildConfigurationList = FBF05BF420910C810004398E /* Build configuration list for PBXProject "gradekeep" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FBF05BF020910C810004398E;
+			productRefGroup = FBF05BFA20910C820004398E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBF05BF820910C810004398E /* gradekeep */,
+				FBF05C0C20910C820004398E /* gradekeepTests */,
+				FBF05C1720910C820004398E /* gradekeepUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBF05BF720910C810004398E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBF05C0720910C820004398E /* LaunchScreen.storyboard in Resources */,
+				FBF05C0420910C820004398E /* Assets.xcassets in Resources */,
+				FBF05C0220910C820004398E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBF05C0B20910C820004398E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBF05C1620910C820004398E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBF05BF520910C810004398E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBF05BFF20910C820004398E /* ViewController.swift in Sources */,
+				FBF05BFD20910C820004398E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBF05C0920910C820004398E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBF05C1220910C820004398E /* gradekeepTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBF05C1420910C820004398E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBF05C1D20910C820004398E /* gradekeepUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBF05C0F20910C820004398E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBF05BF820910C810004398E /* gradekeep */;
+			targetProxy = FBF05C0E20910C820004398E /* PBXContainerItemProxy */;
+		};
+		FBF05C1A20910C820004398E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBF05BF820910C810004398E /* gradekeep */;
+			targetProxy = FBF05C1920910C820004398E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FBF05C0020910C820004398E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBF05C0120910C820004398E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FBF05C0520910C820004398E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBF05C0620910C820004398E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBF05C1F20910C820004398E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FBF05C2020910C820004398E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBF05C2220910C820004398E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B7M7SN6P8B;
+				INFOPLIST_FILE = gradekeep/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leeangioletti.gradekeep;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FBF05C2320910C820004398E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B7M7SN6P8B;
+				INFOPLIST_FILE = gradekeep/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leeangioletti.gradekeep;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FBF05C2520910C820004398E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B7M7SN6P8B;
+				INFOPLIST_FILE = gradekeepTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leeangioletti.gradekeepTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gradekeep.app/gradekeep";
+			};
+			name = Debug;
+		};
+		FBF05C2620910C820004398E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B7M7SN6P8B;
+				INFOPLIST_FILE = gradekeepTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leeangioletti.gradekeepTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gradekeep.app/gradekeep";
+			};
+			name = Release;
+		};
+		FBF05C2820910C820004398E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B7M7SN6P8B;
+				INFOPLIST_FILE = gradekeepUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leeangioletti.gradekeepUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gradekeep;
+			};
+			name = Debug;
+		};
+		FBF05C2920910C820004398E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B7M7SN6P8B;
+				INFOPLIST_FILE = gradekeepUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leeangioletti.gradekeepUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gradekeep;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBF05BF420910C810004398E /* Build configuration list for PBXProject "gradekeep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBF05C1F20910C820004398E /* Debug */,
+				FBF05C2020910C820004398E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBF05C2120910C820004398E /* Build configuration list for PBXNativeTarget "gradekeep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBF05C2220910C820004398E /* Debug */,
+				FBF05C2320910C820004398E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBF05C2420910C820004398E /* Build configuration list for PBXNativeTarget "gradekeepTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBF05C2520910C820004398E /* Debug */,
+				FBF05C2620910C820004398E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBF05C2720910C820004398E /* Build configuration list for PBXNativeTarget "gradekeepUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBF05C2820910C820004398E /* Debug */,
+				FBF05C2920910C820004398E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBF05BF120910C810004398E /* Project object */;
+}
