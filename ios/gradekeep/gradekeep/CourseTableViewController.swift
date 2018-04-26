@@ -19,7 +19,7 @@ class CourseTableViewController: UITableViewController {
         
         // set up courses listener
         let db = Firestore.firestore()
-        db.collection("users/aFor7zG6JZaFhtiNZrtcnUSCSNi1/courses")
+        db.collection("users/aFor7zG6JZaFhtiNZrtcnUSCSNi1/courses").order(by: "cname")
             .addSnapshotListener { querySnapshot, error in
                 guard let documents = querySnapshot?.documents else {
                     print("Error fetching documents: \(error!)")
@@ -86,19 +86,19 @@ class CourseTableViewController: UITableViewController {
             }
         }
     }
-    
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "catsegue" {
             let nextViewController = segue.destination as? CategoryTableViewController
             let selectedIndex = self.tableView.indexPath(for: sender as! UITableViewCell)?.row
-            let ref = "users/"+uid+"/courses/"+String(courses[selectedIndex!]["cid"]! as! String)+"/categories"
+            let ref = "users/"+uid+"/courses/"+String(courses[selectedIndex!]["cid"]! as! String)+"/categories/"
             nextViewController?.navigationItem.title = courses[selectedIndex!]["cname"] as? String
             nextViewController?.ref = ref
         }
         if segue.identifier == "newcoursesegue" {
             let nc = segue.destination as! UINavigationController
-            let nextViewController = nc.topViewController as? CreateCourseTableViewController
-            let ref = "users/"+uid+"/courses"
+            let nextViewController = nc.topViewController as? NewCourseTableViewController
+            let ref = "users/"+uid+"/courses/"
             nextViewController?.ref = ref
         }
     }
