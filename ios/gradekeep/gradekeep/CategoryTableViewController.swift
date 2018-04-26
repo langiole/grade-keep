@@ -25,7 +25,11 @@ class CategoryTableViewController: UITableViewController {
                     print("Error fetching documents: \(error!)")
                     return
                 }
+                
                 self.categories.removeAll()
+                var sum = 0.0
+                var weightsum = 0.0
+                
                 for document in documents {
                     let category = [
                         "catid" : document.documentID,
@@ -34,8 +38,27 @@ class CategoryTableViewController: UITableViewController {
                         "weight" : document.data()["weight"]
                     ]
                     self.categories.append(category)
+                    
+                    sum += (0.1 * Double((category["weight"] as? Double)!) * Double((category["catgrade"] as? Double)!))
+                    weightsum += (category["weight"])! as! Double
+                }
+                
+                let index = self.ref?.index((self.ref?.startIndex)!, offsetBy: (self.ref?.count)! - 12)
+                var cgrade = Double(round(1000*(sum / weightsum)) / 100)
+                
+                if (sum == 0.0) { cgrade = 0.0 }
+                
+                db.document((self.ref?.substring(to: index!))!).updateData([
+                    "cgrade": cgrade
+                ]) { err in
+                    if let err = err {
+                        print("Error updating document: \(err)")
+                    } else {
+                        print("Document successfully updated")
+                    }
                 }
                 self.tableView.reloadData()
+                
         }
     }
 

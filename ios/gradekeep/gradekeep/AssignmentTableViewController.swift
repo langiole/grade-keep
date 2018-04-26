@@ -25,9 +25,11 @@ class AssignmentTableViewController: UITableViewController {
                     print("Error fetching documents: \(error!)")
                     return
                 }
+                
                 self.assignments.removeAll()
                 var creditsum = 0.0
                 var totalcreditsum = 0.0
+                
                 for document in documents {
                     let assignment = [
                         "assid" : document.documentID,
@@ -43,8 +45,10 @@ class AssignmentTableViewController: UITableViewController {
                 }
                 
                 let index = self.ref?.index((self.ref?.startIndex)!, offsetBy: (self.ref?.count)! - 12)
-                let catgrade = Double(round(10000*(creditsum / totalcreditsum)) / 100)
+                var catgrade = Double(round(10000*(creditsum / totalcreditsum)) / 100)
                 
+                if (creditsum == 0.0) { catgrade = 0.0 }
+
                 db.document((self.ref?.substring(to: index!))!).updateData([
                     "catgrade": catgrade
                 ]) { err in
@@ -54,8 +58,6 @@ class AssignmentTableViewController: UITableViewController {
                         print("Document successfully updated")
                     }
                 }
-
-                
                 self.tableView.reloadData()
         }
     }
@@ -84,7 +86,7 @@ class AssignmentTableViewController: UITableViewController {
         
         let totalcreditLabel = cell.viewWithTag(4) as! UILabel
         let y = assignments[indexPath.row]["totalcredit"] as? Double
-        totalcreditLabel.text = "\(y!)"
+        totalcreditLabel.text = "/\(y!)"
         
         let assGradeLabel = cell.viewWithTag(2) as! UILabel
         let z = assignments[indexPath.row]["assgrade"] as? Double
