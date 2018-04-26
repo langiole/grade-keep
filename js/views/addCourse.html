@@ -29,6 +29,10 @@
   <body>
     <div class="container">
       <!-- Title of page-->
+      <p>
+        <br>
+        <br>
+      </p>
       <h1>Grade Keep - Add Course</h1> 
       
       <!-- Enter the name of the course -->
@@ -40,30 +44,79 @@
       </form>
 
       <!-- Category Table -->
-      <table class="table table-striped" id="category-table">
+      <table class="dele-table table table-striped" id="category-table">
+        <!-- Header -->
         <thead>
           <tr>
             <td>Category Name</td>
             <td>Category Weight</td>
           </tr>
         </thead>
+
+        <!-- Body of table (where category get entered) -->
         <tbody>
           <tr>
             <td>
-                <input type="text" name="categoryName" class="form-control" />
+              <input type="text" name="categoryName" class="form-control" />
             </td>
             <td>
-                <input type="text" name="categoryWeight" class="form-control" />
+              <input type="text" name="categoryWeight" class="form-control" />
+            </td>
+            <td>
+              <!-- button for spacing -->
+              <input type="button" class="btn" value="Delete" disabled>
             </td>
           </tr>
         </tbody>
       </table>
 
-        <!-- Page content -->
+      <!-- Button for adding rows -->
+      <input type="button" class="btn btn-block btn-default" id="addCategory" value="Add Category" />
+
+      <!-- Button for adding course-->
+      <input type="button" class="btn-addCourse btn btn-block btn-primary" id="addCourse" value="Add Course" />
 
 
+      <!-- Script for adding/removing rows rows-->
+      <script>
 
-      </div>
+        $(document).ready(function () {
+          var counter = 0;
+  
+          // add category row
+          $("#addCategory").on("click", function () {
+            // create new table row
+            var newRow = $("<tr>");
+
+            // add another row (based on body of table but the delete button is not disabled)
+            var cols = "";
+            cols += '<td><input type="text" class="form-control" name="categoryName' + counter + '"/></td>';
+            cols += '<td><input type="text" class="form-control" name="categoryWeight' + counter + '"/></td>';      
+            cols += '<td><input type="button" class="btn-dele-table btn btn-danger"  value="Delete"></td>';
+            newRow.append(cols);
+            $("table.dele-table").append(newRow);
+            counter++;
+          });
+      
+      
+          // remove rows
+          $("table.dele-table").on("click", ".btn-dele-table", function (event) {
+            $(this).closest("tr").remove();       
+            counter -= 1
+          });
+
+          // print what's in the table
+          $("#addCourse").on("click", function () {
+            // var test = "";
+            var test = document.getElementById("courseName").value;
+            alert(test);
+          });
+    
+    
+        });
+      
+      
+      </script>
     </div>
   </body>
 </html>
