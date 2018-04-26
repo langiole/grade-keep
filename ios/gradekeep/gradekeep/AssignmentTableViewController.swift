@@ -26,6 +26,8 @@ class AssignmentTableViewController: UITableViewController {
                     return
                 }
                 self.assignments.removeAll()
+                var creditsum = 0.0
+                var totalcreditsum = 0.0
                 for document in documents {
                     let assignment = [
                         "assid" : document.documentID,
@@ -35,7 +37,25 @@ class AssignmentTableViewController: UITableViewController {
                         "assgrade" : document.data()["assgrade"]
                     ]
                     self.assignments.append(assignment)
+                    
+                    creditsum += (assignment["credit"] as? Double)!
+                    totalcreditsum += (assignment["totalcredit"] as? Double)!
                 }
+                
+                let index = self.ref?.index((self.ref?.startIndex)!, offsetBy: (self.ref?.count)! - 12)
+                let catgrade = Double(round(10000*(creditsum / totalcreditsum)) / 100)
+                
+                db.document((self.ref?.substring(to: index!))!).updateData([
+                    "catgrade": catgrade
+                ]) { err in
+                    if let err = err {
+                        print("Error updating document: \(err)")
+                    } else {
+                        print("Document successfully updated")
+                    }
+                }
+
+                
                 self.tableView.reloadData()
         }
     }
@@ -71,6 +91,23 @@ class AssignmentTableViewController: UITableViewController {
         assGradeLabel.text = "\(z!)" + "%"
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let db = Firestore.firestore()
+            db.document(ref! + String(assignments[indexPath.row]["assid"]! as! String)).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

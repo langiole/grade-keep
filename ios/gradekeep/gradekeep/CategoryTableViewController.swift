@@ -63,6 +63,24 @@ class CategoryTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let db = Firestore.firestore()
+            print(ref! + String(categories[indexPath.row]["catid"]! as! String))
+            db.document(ref! + String(categories[indexPath.row]["catid"]! as! String)).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "newcatsegue":
@@ -72,9 +90,8 @@ class CategoryTableViewController: UITableViewController {
         case "asssegue":
             let nextViewController = segue.destination as? AssignmentTableViewController
             let selectedIndex = self.tableView.indexPath(for: sender as! UITableViewCell)?.row
-            ref = ref! + String(categories[selectedIndex!]["catid"]! as! String)+"/assignments/"
             nextViewController?.navigationItem.title = categories[selectedIndex!]["catname"] as? String
-            nextViewController?.ref = ref
+            nextViewController?.ref = ref! + String(categories[selectedIndex!]["catid"]! as! String)+"/assignments/"
         default:
             break
         }
