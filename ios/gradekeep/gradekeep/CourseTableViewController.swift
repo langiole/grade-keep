@@ -86,7 +86,7 @@ class CourseTableViewController: UITableViewController {
             }
         }
     }
-    
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "catsegue" {
             let nextViewController = segue.destination as? CategoryTableViewController
@@ -97,7 +97,7 @@ class CourseTableViewController: UITableViewController {
         }
         if segue.identifier == "newcoursesegue" {
             let nc = segue.destination as! UINavigationController
-            let nextViewController = nc.topViewController as? CreateCourseTableViewController
+            let nextViewController = nc.topViewController as? NewCourseTableViewController
             let ref = "users/"+uid+"/courses"
             nextViewController?.ref = ref
         }
