@@ -1,0 +1,48 @@
+// README
+
+// install node.js
+(how you do that goes here)
+
+// install express generator
+npm install -g express-generator
+
+// init project
+express grade-keep
+
+// change directory
+cd grade-keep
+
+// install dependencies
+npm install
+
+// follow instruction from https://firebase.google.com/docs/firestore/quickstart
+
+// add firebase-amin to project
+npm install firebase-admin --save
+
+// stop following the instructions lol
+// go to firebase.google.com
+// go to consoloe
+// open up the current project (or create a project)
+// in the top left find the settings gear 
+// click project settings
+// go to service accounts tabe (near top of the screen)
+// copy and paste the relevant node.js code 
+// download the key json by pressing "generate new key"
+// change the the path in the relevant node.js code line 
+    // var serviceAccount = require("path/to/serviceAccountKey.json");
+
+
+// Go to IAM & admin > Service accounts in the Cloud Platform Console.
+// create a project called <project-name>
+// press create service account
+// enter a name
+// (did not select a role)
+// check "furnish a new private key"
+// make sure to download json
+
+
+
+
+
+
