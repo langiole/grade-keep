@@ -18,7 +18,6 @@ class NewCatTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func addCatPressed(_ sender: Any) {

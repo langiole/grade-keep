@@ -19,7 +19,7 @@ class CategoryTableViewController: UITableViewController {
 
         // set up categories listener
         let db = Firestore.firestore()
-        db.collection(ref!)
+        db.collection(ref!).order(by: "catname")
             .addSnapshotListener { querySnapshot, error in
                 guard let documents = querySnapshot?.documents else {
                     print("Error fetching documents: \(error!)")
@@ -38,13 +38,6 @@ class CategoryTableViewController: UITableViewController {
                 self.tableView.reloadData()
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -75,6 +68,12 @@ class CategoryTableViewController: UITableViewController {
         case "newcatsegue":
             let nc = segue.destination as! UINavigationController
             let nextViewController = nc.topViewController as? NewCatTableViewController
+            nextViewController?.ref = ref
+        case "asssegue":
+            let nextViewController = segue.destination as? AssignmentTableViewController
+            let selectedIndex = self.tableView.indexPath(for: sender as! UITableViewCell)?.row
+            ref = ref! + String(categories[selectedIndex!]["catid"]! as! String)+"/assignments/"
+            nextViewController?.navigationItem.title = categories[selectedIndex!]["catname"] as? String
             nextViewController?.ref = ref
         default:
             break
