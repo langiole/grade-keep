@@ -13,6 +13,8 @@
 		FB52F2782091144500F7B1FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB52F2772091144500F7B1FB /* GoogleService-Info.plist */; };
 		FB560CF62091446400B2F360 /* local_courses.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB560CF52091446400B2F360 /* local_courses.plist */; };
 		FB560CFA2091565A00B2F360 /* db_courses.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB560CF92091565A00B2F360 /* db_courses.plist */; };
+		FB560CFC209177C900B2F360 /* CourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB560CFB209177C900B2F360 /* CourseTableViewController.swift */; };
+		FB560CFE209183F100B2F360 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB560CFD209183F100B2F360 /* CategoryTableViewController.swift */; };
 		FBF05BFD20910C820004398E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF05BFC20910C820004398E /* AppDelegate.swift */; };
 		FBF05BFF20910C820004398E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF05BFE20910C820004398E /* ViewController.swift */; };
 		FBF05C0220910C820004398E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF05C0020910C820004398E /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		FB52F2772091144500F7B1FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB560CF52091446400B2F360 /* local_courses.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = local_courses.plist; sourceTree = "<group>"; };
 		FB560CF92091565A00B2F360 /* db_courses.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = db_courses.plist; sourceTree = "<group>"; };
+		FB560CFB209177C900B2F360 /* CourseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewController.swift; sourceTree = "<group>"; };
+		FB560CFD209183F100B2F360 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		FBF05BF920910C820004398E /* gradekeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gradekeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF05BFC20910C820004398E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF05BFE20910C820004398E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				FBF05BFC20910C820004398E /* AppDelegate.swift */,
 				FBF05BFE20910C820004398E /* ViewController.swift */,
 				FBF05C0020910C820004398E /* Main.storyboard */,
+				FB560CFD209183F100B2F360 /* CategoryTableViewController.swift */,
+				FB560CFB209177C900B2F360 /* CourseTableViewController.swift */,
 				FBF05C0320910C820004398E /* Assets.xcassets */,
 				FBF05C0520910C820004398E /* LaunchScreen.storyboard */,
 				FBF05C0820910C820004398E /* Info.plist */,
@@ -406,7 +412,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBF05BFF20910C820004398E /* ViewController.swift in Sources */,
+				FB560CFC209177C900B2F360 /* CourseTableViewController.swift in Sources */,
 				FBF05BFD20910C820004398E /* AppDelegate.swift in Sources */,
+				FB560CFE209183F100B2F360 /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
