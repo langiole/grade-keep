@@ -12,11 +12,12 @@ import Firebase
 class CourseTableViewController: UITableViewController {
 
     var courses: [[String : Any]] = []
+    let uid = "aFor7zG6JZaFhtiNZrtcnUSCSNi1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set up listener
+        // set up courses listener
         let db = Firestore.firestore()
         db.collection("users/aFor7zG6JZaFhtiNZrtcnUSCSNi1/courses")
             .addSnapshotListener { querySnapshot, error in
@@ -26,7 +27,12 @@ class CourseTableViewController: UITableViewController {
                 }
                 self.courses.removeAll()
                 for document in documents {
-                    self.courses.append(document.data())
+                    let course = [
+                        "cid" : document.documentID,
+                        "cname" : document.data()["cname"],
+                        "cgrade" : document.data()["cgrade"]
+                    ]
+                    self.courses.append(course)
                 }
                 self.tableView.reloadData()
         }
@@ -46,7 +52,6 @@ class CourseTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print("count:", courses.count)
         return courses.count
     }
 
@@ -66,9 +71,19 @@ class CourseTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let viewControllerB = segue.destination as? CategoryTableViewController {
+        if segue.identifier == "catsegue" {
+            let nextViewController = segue.destination as? CategoryTableViewController
             let selectedIndex = self.tableView.indexPath(for: sender as! UITableViewCell)?.row
-            viewControllerB.navigationItem.title = courses[selectedIndex!]["cname"] as? String
+            let ref = "users/"+uid+"/courses/"+String(courses[selectedIndex!]["cid"]! as! String)+"/categories"
+            nextViewController?.navigationItem.title = courses[selectedIndex!]["cname"] as? String
+            nextViewController?.ref = ref
+        }
+        if segue.identifier == "newcoursesegue" {
+            let nc = segue.destination as! UINavigationController
+            let nextViewController = nc.topViewController as? CreateCourseTableViewController
+            let ref = "users/"+uid+"/courses"
+            nextViewController?.ref = ref
         }
     }
+    
 }
