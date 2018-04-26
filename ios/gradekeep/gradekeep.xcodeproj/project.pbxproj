@@ -15,6 +15,7 @@
 		FB560CFA2091565A00B2F360 /* db_courses.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB560CF92091565A00B2F360 /* db_courses.plist */; };
 		FB560CFC209177C900B2F360 /* CourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB560CFB209177C900B2F360 /* CourseTableViewController.swift */; };
 		FB560CFE209183F100B2F360 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB560CFD209183F100B2F360 /* CategoryTableViewController.swift */; };
+		FB560D042091A08100B2F360 /* CreateCourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB560D032091A08100B2F360 /* CreateCourseTableViewController.swift */; };
 		FBF05BFD20910C820004398E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF05BFC20910C820004398E /* AppDelegate.swift */; };
 		FBF05BFF20910C820004398E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF05BFE20910C820004398E /* ViewController.swift */; };
 		FBF05C0220910C820004398E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF05C0020910C820004398E /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		FB560CF92091565A00B2F360 /* db_courses.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = db_courses.plist; sourceTree = "<group>"; };
 		FB560CFB209177C900B2F360 /* CourseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewController.swift; sourceTree = "<group>"; };
 		FB560CFD209183F100B2F360 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		FB560D032091A08100B2F360 /* CreateCourseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseTableViewController.swift; sourceTree = "<group>"; };
 		FBF05BF920910C820004398E /* gradekeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gradekeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF05BFC20910C820004398E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF05BFE20910C820004398E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				FBF05C0820910C820004398E /* Info.plist */,
 				FB560CF52091446400B2F360 /* local_courses.plist */,
 				FB560CF92091565A00B2F360 /* db_courses.plist */,
+				FB560D032091A08100B2F360 /* CreateCourseTableViewController.swift */,
 			);
 			path = gradekeep;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				FB560CFC209177C900B2F360 /* CourseTableViewController.swift in Sources */,
 				FBF05BFD20910C820004398E /* AppDelegate.swift in Sources */,
 				FB560CFE209183F100B2F360 /* CategoryTableViewController.swift in Sources */,
+				FB560D042091A08100B2F360 /* CreateCourseTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
