@@ -9,6 +9,7 @@ app.use(bodyParser.json());
 
 var indexRouter = require("./routes/index");
 var homeRouter = require("./routes/home");
+var addCourseRouter = require("./routes/addCourse")
 
 
 // README - init cloud-firestore
@@ -35,6 +36,9 @@ app.use('/index', indexRouter);
 
 // home page
 app.use('/home', homeRouter);
+
+// add course page
+app.use('/addCourse', addCourseRouter)
 
 app.use(function(req, res, next) {
   res.send("Error: page not found");
