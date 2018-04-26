@@ -1,0 +1,32 @@
+
+
+Tasks                               Desc
+Add Class                           CS 252 (from left)
+Add Categories w/ weights           Midterm, Final, Projects, Attendance (from left)
+Add Assignments w/ points           Lab 5 100/100 points (from right)
+Display Assignments/Grades          On Right
+
+Something Like This
+ ----------------------------------------------------------------------------------------------------
+| Grade Keep                                                                                         |
+ ----------------------------------------------------------------------------------------------------
+| Classes       | Total Grade                                                                 78.5%  |
+|               |                                                                                    |
+| CS252======== | Projects/Homework                                          180/200            90%  |
+| +             | Lab 1                                                       90/100            90%  |
+|               | Lab 2                                                       90/100            90%  |
+|               | +                                                                                  |
+|               |                                                                                    |
+|               | Exams                                                       60/200            65%  |
+|               | Midterm                                                     70/100            70%  |
+|               | Final                                                       60/100            60%  |
+|               | +                                                                                  |
+|               |                                                                                    |
+|               | Attendance                                                     2/2           100%  |
+|               | Check 1                                                        1/1           100%  |
+|               | Check 2                                                        1/1           100%  |
+|               | +                                                                                  |
+|               |                                                                                    |
+ ----------------------------------------------------------------------------------------------------
+
+
