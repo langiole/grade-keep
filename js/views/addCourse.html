@@ -29,6 +29,10 @@
   <body>
     <div class="container">
       <!-- Title of page-->
+      <p>
+        <br>
+        <br>
+      </p>
       <h1>Grade Keep - Add Course</h1> 
       
       <!-- Enter the name of the course -->
@@ -67,7 +71,11 @@
       </table>
 
       <!-- Button for adding rows -->
-      <input type="button" class="btn btn-block btn-lg" id="addRow" value="Add Category" />
+      <input type="button" class="btn btn-block btn-default" id="addCategory" value="Add Category" />
+
+      <!-- Button for adding course-->
+      <input type="button" class="btn-addCourse btn btn-block btn-primary" id="addCourse" value="Add Course" />
+
 
       <!-- Script for adding/removing rows rows-->
       <script>
@@ -75,8 +83,8 @@
         $(document).ready(function () {
           var counter = 0;
   
-          // add rows
-          $("#addRow").on("click", function () {
+          // add category row
+          $("#addCategory").on("click", function () {
             // create new table row
             var newRow = $("<tr>");
 
@@ -95,6 +103,13 @@
           $("table.dele-table").on("click", ".btn-dele-table", function (event) {
             $(this).closest("tr").remove();       
             counter -= 1
+          });
+
+          // print what's in the table
+          $("#addCourse").on("click", function () {
+            // var test = "";
+            var test = document.getElementById("courseName").value;
+            alert(test);
           });
     
     
