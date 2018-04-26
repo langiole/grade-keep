@@ -1,11 +1,15 @@
 var createError   = require("http-errors");
 var express       = require("express");
 var admin         = require("firebase-admin");
+var bodyParser    = require('body-parser');
+
+var app = express();
+
+app.use(bodyParser.json());
 
 var indexRouter = require("./routes/index");
 var homeRouter = require("./routes/home");
 
-var app = express();
 
 // README - init cloud-firestore
 var serviceAccount = require("./grade-keep-firebase-adminsdk-oovcw-4be84ecee7.json");

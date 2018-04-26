@@ -34,7 +34,7 @@
         <br>
       </p>
       <h1>Grade Keep - Add Course</h1> 
-      
+
       <!-- Enter the name of the course -->
       <form>
         <div class="form-group">
@@ -105,18 +105,31 @@
             counter -= 1
           });
 
-          // print what's in the table
+          // click handler for add course
           $("#addCourse").on("click", function () {
             // var test = "";
-            var test = "";
+
+            // get names : category json
             var x = document.getElementsByClassName("form-control getCategoryName")
+            var y = document.getElementsByClassName("form-control getCategoryWeight")
+
+            var data = {}
             for (i = 0; i < x.length; i++) {
-	            test += x[i].value
-              test += "\n"
+              // console.log(x[i].value)
+              //console.log(y[i].value)
+              data[x[i].value] = y[i].value
             }
 
-            // var test = document.getElementById("courseName").value;
-            alert(test);
+            $.ajax({
+              type: "POST",
+              url: "home",
+              data : JSON.stringify(data), 
+              contentType: "application/json",
+              success: function(data,status,xhr) {
+                document.location.href = "/home";
+              }
+            });
+
           });
     
     
