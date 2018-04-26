@@ -18,29 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        let db = Firestore.firestore()
-        let uid = "aFor7zG6JZaFhtiNZrtcnUSCSNi1"
-        
-        // create courses array and insert course object
-        var local_courses: [[String : Any]] = []
-        let course: [String : Any] = [
-            "cname" : "CS 348",
-            "cweight" : 200
-        ]
-        let course2: [String : Any] = [
-            "cname" : "CS 252",
-            "cweight" : 100
-        ]
-        local_courses.append(course)
-
-        // write into plist
-        let path = Bundle.main.path(forResource: "local_courses", ofType: "plist")
-        print(path)
-        let url = URL(fileURLWithPath: path!)
-        (local_courses as NSArray).write(to: url, atomically: true)
-
-        updateLocalCourses(uid: uid, db: db)
-        
         return true
     }
 
@@ -65,48 +42,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    func getUID() -> String {
-        return ""
-    }
-    
-    func updateLocalCourses(uid: String, db: Firestore) {
-        
-        // build db_course array
-        buildArr(ref: "users/" + uid + "/Courses", db: db)
-    
-        
-    }
-    
-    func compPlist(resource1: String, resource2: String) -> Bool {
-        let path1 = Bundle.main.path(forResource: resource1, ofType: "plist")
-        let path2 = Bundle.main.path(forResource: resource2, ofType: "plist")
-        return FileManager.default.contentsEqual(atPath: path1!, andPath: path2!)
-    }
-    
-    func writeIntoPlist(arr: [[String : Any]], resource: String) {
-        let path = Bundle.main.path(forResource: resource, ofType: "plist")
-        let url = URL(fileURLWithPath: path!)
-        (arr as NSArray).write(to: url, atomically: true)
-    }
-    
-    func buildArr(ref: String, db: Firestore) {
-        var arr: [[String : Any]] = []
-        db.collection(ref).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    arr.append(document.data() as [String : Any])
-                }
-                // write into plist
-                self.writeIntoPlist(arr: arr, resource: "db_courses")
-                
-                // compare local and db plist
-                print(self.compPlist(resource1: "local_courses", resource2: "db_courses"))
-            }
-        }
-    }
-    
 }
 
