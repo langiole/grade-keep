@@ -109,30 +109,28 @@
           $("#addCourse").on("click", function () {
             // var test = "";
 
-            // get names : category json
+            // get names : category json (with _course name at the top)
             var x = document.getElementsByClassName("form-control getCategoryName")
             var y = document.getElementsByClassName("form-control getCategoryWeight")
+            var z = document.getElementById("courseName")
 
             var data = {}
+            data["_courseName"] = z.value
             for (i = 0; i < x.length; i++) {
-              // console.log(x[i].value)
-              //console.log(y[i].value)
               data[x[i].value] = y[i].value
             }
 
+            // post new json
             $.ajax({
               type: "POST",
-              url: "home",
+              url: "addCourse",                     // POST /addCourse
               data : JSON.stringify(data), 
               contentType: "application/json",
               success: function(data,status,xhr) {
-                document.location.href = "/home";
+                document.location.href = "/home";   // cd   /home
               }
             });
-
           });
-    
-    
         });
       
       
