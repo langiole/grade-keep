@@ -57,10 +57,10 @@
         <tbody>
           <tr>
             <td>
-              <input type="text" name="categoryName" class="form-control" />
+              <input type="text" name="categoryName" class="form-control getCategoryName" />
             </td>
             <td>
-              <input type="text" name="categoryWeight" class="form-control" />
+              <input type="text" name="categoryWeight" class="form-control getCategoryWeight" />
             </td>
             <td>
               <!-- button for spacing -->
@@ -90,8 +90,8 @@
 
             // add another row (based on body of table but the delete button is not disabled)
             var cols = "";
-            cols += '<td><input type="text" class="form-control" name="categoryName' + counter + '"/></td>';
-            cols += '<td><input type="text" class="form-control" name="categoryWeight' + counter + '"/></td>';      
+            cols += '<td><input type="text" class="form-control getCategoryName" name="categoryName' + counter + '"/></td>';
+            cols += '<td><input type="text" class="form-control getCategoryWeight" name="categoryWeight' + counter + '"/></td>';      
             cols += '<td><input type="button" class="btn-dele-table btn btn-danger"  value="Delete"></td>';
             newRow.append(cols);
             $("table.dele-table").append(newRow);
@@ -108,7 +108,14 @@
           // print what's in the table
           $("#addCourse").on("click", function () {
             // var test = "";
-            var test = document.getElementById("courseName").value;
+            var test = "";
+            var x = document.getElementsByClassName("form-control getCategoryName")
+            for (i = 0; i < x.length; i++) {
+	            test += x[i].value
+              test += "\n"
+            }
+
+            // var test = document.getElementById("courseName").value;
             alert(test);
           });
     
