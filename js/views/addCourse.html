@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- Title of the page in the tab bar-->
+    <title>Add Class</title>
+    
+    <!--==============================================================================================================-->
+    <!-- from FirebaseUI tutorial (https://firebase.google.com/docs/auth/web/firebaseui) -->
+    <!--==============================================================================================================-->
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />  
+    
+    <!--==============================================================================================================-->
+    <!-- from w3school bootstrap tutorial https://www.w3schools.com/bootstrap4/bootstrap_get_started.asp-->
+    <!--==============================================================================================================-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!-- Formats the page so that it looks good on mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="container">
+      <!-- Title of page-->
+      <h1>Grade Keep - Add Course</h1> 
+      
+      <!-- Enter the name of the course -->
+      <form>
+        <div class="form-group">
+          <label for="courseName">Course Name</label>
+          <input type="text" class="form-control" id="courseName">
+        </div>
+      </form>
+
+      <!-- Category Table -->
+      <table class="table table-striped" id="category-table">
+        <thead>
+          <tr>
+            <td>Category Name</td>
+            <td>Category Weight</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+                <input type="text" name="categoryName" class="form-control" />
+            </td>
+            <td>
+                <input type="text" name="categoryWeight" class="form-control" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+        <!-- Page content -->
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
