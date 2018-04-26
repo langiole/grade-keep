@@ -1,14 +1,13 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path')
+var createError   = require("http-errors");
+var express       = require("express");
+var admin         = require("firebase-admin");
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require("./routes/index");
+var homeRouter = require("./routes/home");
 
 var app = express();
 
 // README - init cloud-firestore
-var admin = require("firebase-admin");
 var serviceAccount = require("./grade-keep-firebase-adminsdk-oovcw-4be84ecee7.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -16,6 +15,7 @@ admin.initializeApp({
 });
 var db = admin.firestore();
 
+// TEST TO SEE IF USER EXISTS
 admin.auth().getUserByEmail("jordan@charloe.com")
   .then(function(userRecord) {
     // See the UserRecord reference doc for the contents of userRecord.
@@ -26,14 +26,14 @@ admin.auth().getUserByEmail("jordan@charloe.com")
   });
 
 
-// default page
-app.use('/', indexRouter);
+// index page
+app.use('/index', indexRouter);
 
-// users page
-app.use('/users', usersRouter);
+// home page
+app.use('/home', homeRouter);
 
 app.use(function(req, res, next) {
-  res.send("Error: page not found")
+  res.send("Error: page not found");
 });
 
 module.exports = app;
