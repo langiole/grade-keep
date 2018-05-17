@@ -9,6 +9,12 @@
 import UIKit
 import Firebase
 
+enum Mode {
+    case new
+    case edit
+    case none
+}
+
 class NewCourseTableViewController: UITableViewController {
     
     @IBOutlet weak var cnameTextField: UITextField!
@@ -22,8 +28,8 @@ class NewCourseTableViewController: UITableViewController {
         let db = Firestore.firestore()
         
         let course = [
-            "cname" : cnameTextField.text,
-            "cgrade" : 0.0
+            "course_name" : cnameTextField.text,
+            "course_grade" : 0.0
             ] as [String : Any]
         
         db.collection(ref!).addDocument(data: course){ err in

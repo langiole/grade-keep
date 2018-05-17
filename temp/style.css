@@ -1,0 +1,41 @@
+body {
+	background-color: #F8FAF9;
+	margin: 0px;
+}
+
+#container {
+
+}
+
+#nav {
+	background-color: #303E4E;
+	width: 256px;
+	height: 100%;
+}
+
+#nav p {
+	color: #D1D1D6;
+	font: bold 20px arial, sans-serif;
+	padding: 0px;
+	margin: 0px 0px 10px 30px;
+}
+
+.nav-button:hover {
+	color: #D1D1D6;
+}
+
+.nav-button:active {
+	color: #84C1C6;
+}
+
+.nav-button {
+  background-color: #303E4E;
+  border: none;
+  color: #8E8E93;
+  text-align: left;
+  font: bold 30px arial, sans-serif;
+  padding: 0px 125px 0px 30px;
+  cursor: pointer;
+  margin: 10px 0px 10px 0px;
+  border: 0px;
+}

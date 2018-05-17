@@ -19,6 +19,7 @@
 		FB560D082091C49000B2F360 /* NewCatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB560D072091C49000B2F360 /* NewCatTableViewController.swift */; };
 		FB5A22FB2091D219003F63C5 /* NewAssTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A22FA2091D219003F63C5 /* NewAssTableViewController.swift */; };
 		FB5A22FD2091D635003F63C5 /* AssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A22FC2091D635003F63C5 /* AssignmentTableViewController.swift */; };
+		FB85787620A8179D00436D5A /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85787520A8179D00436D5A /* Structs.swift */; };
 		FBF05BFD20910C820004398E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF05BFC20910C820004398E /* AppDelegate.swift */; };
 		FBF05BFF20910C820004398E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF05BFE20910C820004398E /* ViewController.swift */; };
 		FBF05C0220910C820004398E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF05C0020910C820004398E /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		FB560D072091C49000B2F360 /* NewCatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCatTableViewController.swift; sourceTree = "<group>"; };
 		FB5A22FA2091D219003F63C5 /* NewAssTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAssTableViewController.swift; sourceTree = "<group>"; };
 		FB5A22FC2091D635003F63C5 /* AssignmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewController.swift; sourceTree = "<group>"; };
+		FB85787520A8179D00436D5A /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		FBF05BF920910C820004398E /* gradekeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gradekeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF05BFC20910C820004398E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF05BFE20910C820004398E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				FB560D072091C49000B2F360 /* NewCatTableViewController.swift */,
 				FB5A22FA2091D219003F63C5 /* NewAssTableViewController.swift */,
 				FB5A22FC2091D635003F63C5 /* AssignmentTableViewController.swift */,
+				FB85787520A8179D00436D5A /* Structs.swift */,
 			);
 			path = gradekeep;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB85787620A8179D00436D5A /* Structs.swift in Sources */,
 				FBF05BFF20910C820004398E /* ViewController.swift in Sources */,
 				FB560D062091C41000B2F360 /* NewCourseTableViewController.swift in Sources */,
 				FB560CFC209177C900B2F360 /* CourseTableViewController.swift in Sources */,

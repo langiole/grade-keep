@@ -9,9 +9,17 @@
 import UIKit
 import Firebase
 
+enum Ass : String {
+    case id
+    case name = "assname"
+    case credit
+    case totalcredit
+    case grade = "assgrade"
+}
+
 class AssignmentTableViewController: UITableViewController {
 
-    var assignments: [[String : Any]] = []
+    var assignments: [[Ass : Any]] = []
     var ref: String?
     
     override func viewDidLoad() {
@@ -19,7 +27,7 @@ class AssignmentTableViewController: UITableViewController {
         
         // init assignments listener and import data
         let db = Firestore.firestore()
-        db.collection(ref!).order(by: "assname")
+        db.collection(ref!).order(by: Ass.name.rawValue)
             .addSnapshotListener { querySnapshot, error in
                 guard let documents = querySnapshot?.documents else {
                     print("Error fetching documents: \(error!)")
@@ -32,16 +40,16 @@ class AssignmentTableViewController: UITableViewController {
                 
                 for document in documents {
                     let assignment = [
-                        "assid" : document.documentID,
-                        "assname" : document.data()["assname"],
-                        "credit" : document.data()["credit"],
-                        "totalcredit" : document.data()["totalcredit"],
-                        "assgrade" : document.data()["assgrade"]
+                        Ass.id : document.documentID,
+                        Ass.name : document.data()[Ass.name.rawValue] ?? "",
+                        Ass.credit : document.data()[Ass.credit.rawValue] ?? 0.0,
+                        Ass.totalcredit : document.data()[Ass.totalcredit.rawValue] ?? 1.0,
+                        Ass.grade : document.data()[Ass.grade.rawValue] ?? 0.0,
                     ]
                     self.assignments.append(assignment)
                     
-                    creditsum += (assignment["credit"] as? Double)!
-                    totalcreditsum += (assignment["totalcredit"] as? Double)!
+                    creditsum += (assignment[Ass.credit] as? Double)!
+                    totalcreditsum += (assignment[Ass.totalcredit] as? Double)!
                 }
                 
                 let index = self.ref?.index((self.ref?.startIndex)!, offsetBy: (self.ref?.count)! - 12)
@@ -50,7 +58,7 @@ class AssignmentTableViewController: UITableViewController {
                 if (creditsum == 0.0) { catgrade = 0.0 }
 
                 db.document((self.ref?.substring(to: index!))!).updateData([
-                    "catgrade": catgrade
+                    Cat.grade.rawValue : catgrade
                 ]) { err in
                     if let err = err {
                         print("Error updating document: \(err)")
@@ -78,18 +86,18 @@ class AssignmentTableViewController: UITableViewController {
         
         // Configure the cell...
         let assNameLabel = cell.viewWithTag(1) as! UILabel
-        assNameLabel.text = assignments[indexPath.row]["assname"] as? String
+        assNameLabel.text = assignments[indexPath.row][Ass.name] as? String
         
         let creditLabel = cell.viewWithTag(3) as! UILabel
-        let x = assignments[indexPath.row]["credit"] as? Double
+        let x = assignments[indexPath.row][Ass.credit] as? Double
         creditLabel.text = "\(x!)"
         
         let totalcreditLabel = cell.viewWithTag(4) as! UILabel
-        let y = assignments[indexPath.row]["totalcredit"] as? Double
+        let y = assignments[indexPath.row][Ass.totalcredit] as? Double
         totalcreditLabel.text = "/\(y!)"
         
         let assGradeLabel = cell.viewWithTag(2) as! UILabel
-        let z = assignments[indexPath.row]["assgrade"] as? Double
+        let z = assignments[indexPath.row][Ass.grade] as? Double
         assGradeLabel.text = "\(z!)" + "%"
         
         return cell
@@ -99,25 +107,52 @@ class AssignmentTableViewController: UITableViewController {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
-            let db = Firestore.firestore()
-            db.document(ref! + String(assignments[indexPath.row]["assid"]! as! String)).delete() { err in
-                if let err = err {
-                    print("Error removing document: \(err)")
-                } else {
-                    print("Document successfully removed!")
-                }
-            }
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let edit = editAction(at: indexPath)
+        let delete = deleteAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete, edit])
+    }
+    
+    func editAction(at index: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: "Edit") { (action, view, completion) in
+            self.performSegue(withIdentifier: "editasssegue", sender: self.tableView.cellForRow(at: index))
+            completion(true)
         }
+        action.title = "Edit"
+        action.backgroundColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0)
+        return action
+    }
+    
+    func deleteAction(at index: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            let db = Firestore.firestore()
+            db.document(self.ref! + String(self.assignments[index.row][Ass.id]! as! String)).delete() { err in
+                if let err = err { print("Error removing document: \(err)") }
+                else { print("Document successfully removed!") }
+            }
+            completion(true)
+        }
+        action.title = "Delete"
+        action.backgroundColor = UIColor(red:0.91, green:0.30, blue:0.24, alpha:1.0)
+        return action
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "newasssegue":
-            let nc = segue.destination as! UINavigationController
-            let nextViewController = nc.topViewController as? NewAssTableViewController
-            nextViewController?.ref = ref
+            let nextView = segue.destination as! UINavigationController
+            let assView = nextView.topViewController as? NewAssTableViewController
+            assView?.ref = ref
+            assView?.mode = .new
+        case "editasssegue":
+            let i = self.tableView.indexPath(for: sender as! UITableViewCell)?.row
+            let nextView = segue.destination as! UINavigationController
+            let assView = nextView.topViewController as? NewAssTableViewController
+            assView?.ref = ref! + String(assignments[i!][Ass.id]! as! String)
+            assView?.mode = .edit
+            assView?.assnameHolder = String(assignments[i!][Ass.name]! as! String)
+            assView?.creditHolder = String(assignments[i!][Ass.credit]! as! Double)
+            assView?.totalcreditHolder = String(assignments[i!][Ass.totalcredit]! as! Double)
         default:
             break
         }
